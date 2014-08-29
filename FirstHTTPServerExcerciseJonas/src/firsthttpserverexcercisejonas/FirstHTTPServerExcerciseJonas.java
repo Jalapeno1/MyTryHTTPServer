@@ -20,7 +20,7 @@ import java.net.InetSocketAddress;
 public class FirstHTTPServerExcerciseJonas
 {
 
-    static int port = 4545; //8080
+    static int port = 2020; //8080
     static String ip = "127.0.0.1";
 
     public static void main(String[] args) throws Exception
@@ -39,7 +39,6 @@ public class FirstHTTPServerExcerciseJonas
 
     static class RequestHandler implements HttpHandler
     {
-
         @Override
         public void handle(HttpExchange he) throws IOException
         {
@@ -58,7 +57,7 @@ public class FirstHTTPServerExcerciseJonas
             sb.append("</html>\n");
             response = sb.toString();
 
-            Headers h = he.getRequestHeaders();
+            Headers h = he.getResponseHeaders();
             h.add("Content-Type", "text/html");
                     
             
